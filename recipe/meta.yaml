@@ -1,5 +1,5 @@
 {% set name = "pywbt" %}
-{% set version = "0.2.7" %}
+{% set version = "0.2.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pywbt-{{ version }}.tar.gz
-  sha256: a18387f847f8b8fd76618835a3cb814a7b890d563797b61f6e1c3c4620787c23
+  sha256: dee3a02b5f9de10a27ebe8bfcde43416d4a2fa80f47920f3b909dc47c6473273
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -22,6 +22,8 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
+    - filelock
+    - tomli >=1.1
 
 test:
   imports:
