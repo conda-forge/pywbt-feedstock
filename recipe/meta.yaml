@@ -22,6 +22,8 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
+    - filelock
+    - tomli>=1.1  # [py<311]
 
 test:
   imports:
