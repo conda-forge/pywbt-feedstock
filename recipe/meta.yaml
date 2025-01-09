@@ -23,9 +23,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - filelock
-    - if: match(python, "<3.11")
-      then:
-        - tomli >=1.1.0
+    - tomli >=1.1
 
 test:
   imports:
